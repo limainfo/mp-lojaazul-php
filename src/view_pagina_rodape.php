@@ -1,30 +1,26 @@
 
 
-<div id="spinner">
+<div id="spinner" style="display:none;">
 	<img src="images/loading.gif" alt="">
 </div>
 
 
 
 <div id="footer">
-    <div class="footer_logo"><img id="horizontal_logo" src="img/horizontal_logo.png"></div>
-    <div class="footer_text">
-        <p>Developers Site:</p>
-        <p><a href="https://www.mercadopago.com/developers">https://www.mercadopago.com/developers</a></p>
-    </div>
-	<p class="left">
-		<a href="#"><b>SIOP</b> <i>versão <b>1.1</b></i></a>
-	</p>
-	<p class="center">
-	<?php 
-	$tempo = microtime(TRUE) - $medidorinicio;
-	echo  'Tempo:<b>'.number_format($tempo, 6) . ' s</b>';
-	?>
-	</p>
-	<p class="right">
-		<a href="mailto:limainfo@gmail.com">limainfo@gmail.com</a>
-	</p>
-
+		<p>Developers Site:</p>
+		<p><a href="https://www.mercadopago.com/developers">https://www.mercadopago.com/developers</a></p>
+		<p class="left">
+			<a href="#"><b>SIOP</b> <i>versão <b>1.1</b></i></a>
+		</p>
+		<p class="center">
+		<?php 
+		$tempo = microtime(TRUE) - $medidorinicio;
+		echo  'Tempo:<b>'.number_format($tempo, 6) . ' s</b>';
+		?>
+		</p>
+		<p class="right">
+			<a href="mailto:limainfo@gmail.com">limainfo@gmail.com</a>
+		</p>
 </div>
 
 

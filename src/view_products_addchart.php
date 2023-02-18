@@ -21,26 +21,23 @@
 			<input type="hidden" name="reference[]" value="<?php echo $valor['reference']; ?>" />
 			<input type="hidden" name="price[]" value="<?php echo $valor['price']; ?>" />
 			<input type="hidden" name="ip[]" value="<?php echo $valor['ip']; ?>" />
-			<input type="hidden" name="controller" id="controller" value="products" />
 
-			<div class="mensagensform"  style="margin:0px;padding:0px;diplay:none;">
-			<div class='message errormsg' id='erro' ><p id='txterroform'></p><span title='Dismiss' class='close' onclick="$('.mensagensform').hide('slow');"></span></div></div>
 
 
 			<p><input type="submit" class="submit small lightgray" value="Change QTY" onClick="updateQty('<?php echo $valor['reference']; ?>','#qty<?php echo $indice; ?>');"/>		
 			<hr>
 <?php $indice++; endif;  ?>
 <?php endforeach; ?>
+			<input type="hidden" name="controller" id="controller" value="<?php echo $controllernome; ?>" />
+			<input type="hidden" name="acao" id="acao" value="products" />
+			<div class="mensagensform"  style="margin:0px;padding:0px;diplay:none;">
+			<div class='message errormsg' id='erro' ><p id='txterroform'></p><span title='Dismiss' class='close' onclick="$('.mensagensform').hide('slow');"></span></div></div>
 <?php if($indice==0){ ?>
 	<h3>The Chart is empty.</h3>
 <?php }else{ ?>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="summary">
                             <h3>Cart</h3>
                             <div class="summary-item"><span class="text">Subtotal:&nbsp;&nbsp;&nbsp;&nbsp;<b></span><span class="price" id="cart-total"><?php echo $subtotal; ?></span></b></div>
-                            <button class="btn btn-primary btn-lg btn-block" id="checkout-btn" onClick="envia();">PAGUE A COMPRA</button>
-                        </div>
-                    </div>	
+                            <button class="btn btn-primary btn-lg btn-block" style="width:100%;" id="checkout-btn" onClick="envia();">PAGUE A COMPRA</button>
 <?php }  ?>					
 		</form>
 		<?php //print_r($_SESSION);		?>
@@ -50,7 +47,9 @@ $('#erro').hide();
 $('.mensagensform').hide();
 
 function envia() {
+  $('#acao').val('showchartbuy');
   var dados = $("#<?php echo $controllernome; ?>Form").serialize();
+
   $.ajax({
 	type: 'POST',
 	 processData: true,
@@ -59,24 +58,12 @@ function envia() {
       $("#spinner").css({'display':'block'});
 	},
     success: function(data) {
-	  registros = data;
-	  status = registros['status'];
-	  mensagem = registros['mensagemstatus'];
-	  if(status=='ERRO'){
-		  $("#txterroform").html(mensagem);
-		  $('.mensagensform').show('bounce');       
-		  $('#erro').show('bounce');       
-		}else{
-			conteudo = decodeURIComponent(registros['conteudo']);
-			$("#listagem").html(conteudo);
-			$("#spinner").css({'display':'none'});
-			$( "#manipulacao" ).dialog( "close" );
-		}
+	  $('#manipulacao').html(data);
       $("#spinner").css({'display':'none'});
     },
     error: function() {},
-    data: dados ,
-    datatype: 'json',
+    data: dados,
+    datatype: 'html',
     contentType: 'application/x-www-form-urlencoded'
   });
  }

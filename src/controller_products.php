@@ -67,6 +67,12 @@ if ( isset($_POST['controller']) &&($_POST['controller']=='products') && ($_POST
 }
 
 
+
+if ( isset($_POST['controller']) &&($_POST['controller']=='products') && ($_POST['acao']=='showchartbuy') ){
+	include("view_products_pagamento.php");
+}
+
+
 if ( isset($_POST['controller']) &&($_POST['controller']=='usuario') && ($_POST['acao']=='exclui') ){
 	$status = '';
 	$mensagemstatus = '';

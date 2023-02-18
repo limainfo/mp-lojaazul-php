@@ -138,9 +138,6 @@ $(function() {
 		return Math.round(dadocampo * 100) / 100;
 	}
 
-	
 
-
-		
 	
 </script>

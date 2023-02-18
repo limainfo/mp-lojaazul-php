@@ -20,7 +20,8 @@
 <!--<script type="text/javascript" 	src="js/jquery-2.1.1.js"></script> -->
 <script   src="https://code.jquery.com/jquery-3.6.3.min.js"  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="  crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" 	href="js/hot-sneaks/jquery-ui.css">
-
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
 
 
 

@@ -1238,50 +1238,54 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', end
 
 #footer {
 	background: url(../images/ft.gif) 0 0 repeat-x;
-	padding: 10px 0 50px;
+	padding: 0px 0 0px;
 	font-size: 10px;
 	background-color: blue;
-
-	clear: both;
 	overflow: hidden;
-	
-	height: 40px;
-    border: black solid 2px;
-    background: blue;
-    color: white;
-    font-weight: bold;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-opacity: 0.7;
-    -moz-opacity: 0.7;
-    opacity: 0.7;	
-	}
-	
-#footer a {
-	color: #757575;
-	text-decoration: underline;
+	height: 60px;
+	border: black solid 2px;
+	color: white;
+	font-weight: bold;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-opacity: 0.7;
+	-moz-opacity: 0.7;
+	opacity: 0.7;
+
+}
+
+	#footer a {
+		color: #757575;
+		text-decoration: underline;
 	}
 
 #footer a:hover {
 	color: #666;
 	text-decoration: none;
 	}
-	
-#footer .left {
-	float: left;
+
+	#footer p.left {
+		float: left;
+		margin-top: 0;
 	}
 
-#footer .center {
-	text-align: center;
+	#footer p.center {
+		text-align: center;
+		margin-top: 0;
+
 	}
-	
-	
-#footer .right {
-	float: right;
-	margin-top: -36px;
+
+#footer p {
+	margin-top: 0;
+	margin-bottom: -1rem;
+}
+
+	#footer .right {
+		float: right;
+		margin-top: -15px;
 	}
 	
 
