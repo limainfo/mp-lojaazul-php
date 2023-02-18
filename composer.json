@@ -1,0 +1,17 @@
+{
+    "name": "limainfo/mp-lojaazul-php",
+    "description": "<dev> program Mercado Pago",
+    "type": "project",
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "Limainfo\\MpLojaazulPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Evaldo S Lima"
+        }
+    ],
+    "require": {}
+}
