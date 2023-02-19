@@ -12,13 +12,15 @@ include ('products.php');
     <div class="col-sm-4">
 	
         <div class="card text-center  border-dark mb-3">
-          <img src="<?= $value['imgsrc'] ?>" alt="Card image cap"  class="card-img-top" alt="Card image cap">
+          <img  id="imgsrc<?= $value['id'] ?>" src="<?= $value['imgsrc'] ?>" alt="Card image cap"  >
           <div class="card-body">
-            <h5 class="card-title" id="product<?= $value['id'] ?>"><?= $value['product'] ?></h5>
+            <h6 class="card-title" id="nome<?= $value['id'] ?>"><?= $value['nome'] ?></h6>
+            <h7 class="card-title" id="descricao<?= $value['id'] ?>"><?= $value['descricao'] ?></h7>
             <p class="card-text" id="price<?= $value['id'] ?>"><?= $value['price'] ?></p>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" id="reference<?= $value['id'] ?>"><?= $value['reference'] ?></li>
+            <li class="list-group-item" id="id<?= $value['id'] ?>"><?= $value['id'] ?></li>
           </ul>
+			<input type="hidden" id="reference<?= $value['id'] ?>" value="<?php echo $value['reference']; ?>" />
             <a href="#" class="btn btn-primary" onclick="addchart('<?= $value['id'] ?>');">Add to Cart</a>
           </div>
         </div>	

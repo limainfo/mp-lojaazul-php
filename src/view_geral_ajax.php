@@ -6,6 +6,10 @@
 <!--<script type="text/javascript" src="js/ui/js/jquery-ui-1.13.2/jquery-ui.min.js"></script>-->
 
 <script type="text/javascript">
+const mp = new MercadoPago('TEST-d6663f9a-bf2d-4d68-95fb-6e491bfdf8bd', {
+    locale: 'pt-BR'
+  });
+
 $.fx.speeds._default = 1000;
 	$(function() {
 		$( "#manipulacao" ).dialog({autoOpen: false,modal: true, widht: window.innerWidth * 7/10, show: 'highlight',hide: 'fade'
@@ -28,7 +32,7 @@ function addchart(id) {
 			$( this ).dialog( "close" );
 		}
 	}); 
-  var parametros = {'controller':'products','acao':'addchart', 'id':id, 'product': $('#product'+id).text(), 'price': $('#price'+id).text(), 'reference': $('#reference'+id).text(), 'qty': $('#qty'+id).text(),'ip': '<?php  echo $_SERVER['REMOTE_ADDR'] ?>'};
+  var parametros = {'controller':'products','acao':'addchart', 'id':id, 'nome': $('#nome'+id).text(), 'descricao': $('#descricao'+id).text(), 'imgsrc': $('#imgsrc'+id).attr('src'), 'price': $('#price'+id).text(), 'reference': $('#reference'+id).val(), 'qty': $('#qty'+id).text(),'ip': '<?php  echo $_SERVER['REMOTE_ADDR'] ?>'};
   var dados = parametros;
   $.ajax({
 	type: 'POST',

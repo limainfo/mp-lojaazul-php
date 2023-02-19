@@ -21,7 +21,10 @@ if ( isset($_POST['controller']) &&($_POST['controller']=='products') && ($_POST
 			}
 		}
 		if(!$exists){
-			$_SESSION['comprados'][$_SESSION['itens_chart']]['product']=$_POST['product'];
+			$_SESSION['comprados'][$_SESSION['itens_chart']]['id']=$_POST['id'];
+			$_SESSION['comprados'][$_SESSION['itens_chart']]['nome']=$_POST['nome'];
+			$_SESSION['comprados'][$_SESSION['itens_chart']]['descricao']=$_POST['descricao'];
+			$_SESSION['comprados'][$_SESSION['itens_chart']]['imgsrc']=$_POST['imgsrc'];
 			$_SESSION['comprados'][$_SESSION['itens_chart']]['price']=$_POST['price'];
 			$_SESSION['comprados'][$_SESSION['itens_chart']]['reference']=$_POST['reference'];		
 			if(empty($_SESSION['comprados'][$_SESSION['itens_chart']]['qty'])){
@@ -31,7 +34,10 @@ if ( isset($_POST['controller']) &&($_POST['controller']=='products') && ($_POST
 			$_SESSION['itens_chart'] = $_SESSION['itens_chart']+1;	
 		}
 	}else{	
-		$_SESSION['comprados'][$_SESSION['itens_chart']]['product']=$_POST['product'];
+		$_SESSION['comprados'][$_SESSION['itens_chart']]['id']=$_POST['id'];
+		$_SESSION['comprados'][$_SESSION['itens_chart']]['nome']=$_POST['nome'];
+		$_SESSION['comprados'][$_SESSION['itens_chart']]['descricao']=$_POST['descricao'];
+		$_SESSION['comprados'][$_SESSION['itens_chart']]['imgsrc']=$_POST['imgsrc'];
 		$_SESSION['comprados'][$_SESSION['itens_chart']]['price']=$_POST['price'];
 		$_SESSION['comprados'][$_SESSION['itens_chart']]['reference']=$_POST['reference'];
 		if(empty($_SESSION['comprados'][$_SESSION['itens_chart']]['qty'])){

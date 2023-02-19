@@ -5,20 +5,21 @@
     max-width: 600px;
 }
 
-.container {
-    height: 18px;
-    display: inline-block;
-    border: 1px solid rgb(118, 118, 118);
-    border-radius: 2px;
-    padding: 1px 2px;
+.tamField {
+    height: 30px;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid gray;
+    font-family: Gill Sans,Arial,sans-serif;
+    font-size: 1em;
 }
+
 </style>
-<div class="block">
-	<div class="block_content">
+  <div class="form-group">
 <form id="form-checkout">
-<div id="form-checkout__cardNumber" class="container"></div>
-<div id="form-checkout__expirationDate" class="container"></div>
-<div id="form-checkout__securityCode" class="container"></div>
+<div id="form-checkout__cardNumber" class="tamField"></div>
+<div id="form-checkout__expirationDate" class="tamField"></div>
+<div id="form-checkout__securityCode" class="tamField"></div>
 <input type="text" id="form-checkout__cardholderName" />
 <select id="form-checkout__issuer"></select>
 <select id="form-checkout__installments"></select>
@@ -26,18 +27,16 @@
 <input type="text" id="form-checkout__identificationNumber" />
 <input type="email" id="form-checkout__cardholderEmail" />
 
-<button type="submit" id="form-checkout__submit">Pagar</button>
+<button class="btn btn-primary btn-lg btn-block" style="width:100%;" type="submit" id="form-checkout__submit">Pagar</button><br><br>
 <progress value="0" class="progress-bar">Carregando...</progress>
 </form>
+</div>
 
-</div></div>
 <script>
-const mp = new MercadoPago('TEST-d6663f9a-bf2d-4d68-95fb-6e491bfdf8bd', {
-    locale: 'pt-BR'
-  });
 
 
-    const cardForm = mp.cardForm({
+
+    const formularioCartao123s = mp.cardForm({
       amount: "100.5",
       iframe: true,
       form: {

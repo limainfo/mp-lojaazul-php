@@ -4,9 +4,11 @@
 		<form accept-charset="utf-8" action="controller_products.php" method="post" enctype="multipart/form-data" id="productsForm" onSubmit="return false;">
 <?php foreach ($_SESSION['comprados'] as $ind=>$valor): ?>
 <?php if ($valor['qty']>0): ?>
-
-			<h2><?php echo $valor['product']; ?></h2>
+            
+			<h2><img src="<?= $valor['imgsrc'] ?>" class="img-thumbnail" alt="Card image cap"><?php echo $valor['nome']; ?></h2>
+			<h3><?php echo $valor['descricao']; ?></h3>
 			<h3><?php echo $valor['reference']; ?></h3>
+			<h3><?php echo $valor['id']; ?></h3>
 			<h2><?php echo $valor['price']; ?></h2>
 			Qty:<select class="custom-select" name="qty[]" id="qty<?php echo $indice; ?>" >
 				  <option selected><?php echo $valor['qty']; $number_ = number_format(str_replace(',','.',str_replace('.','',str_replace('R$ ','',$valor['price']))), 2, '.', ''); $subtotal += $valor['qty']*$number_; ?></option>
@@ -17,7 +19,10 @@
 				</select>
 			<p></p>
 			<hr>
-			<input type="hidden" name="product[]" value="<?php echo $valor['product']; ?>" />
+			<input type="hidden" name="id[]" value="<?php echo $valor['id']; ?>" />
+			<input type="hidden" name="nome[]" value="<?php echo $valor['nome']; ?>" />
+			<input type="hidden" name="descricao[]" value="<?php echo $valor['descricao']; ?>" />
+			<input type="hidden" name="imgsrc[]" value="<?php echo $valor['imgsrc']; ?>" />
 			<input type="hidden" name="reference[]" value="<?php echo $valor['reference']; ?>" />
 			<input type="hidden" name="price[]" value="<?php echo $valor['price']; ?>" />
 			<input type="hidden" name="ip[]" value="<?php echo $valor['ip']; ?>" />
