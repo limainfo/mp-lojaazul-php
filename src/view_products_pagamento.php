@@ -8,6 +8,7 @@
 .tamField {
     height: 30px;
     padding: 0px;
+    width: 100%;
     margin: 0px;
     border: 1px solid gray;
     font-family: Gill Sans,Arial,sans-serif;
@@ -15,8 +16,8 @@
 }
 
 </style>
-  <div class="form-group">
-<form id="form-checkout">
+<form id="form-checkout" style="width:100%;">
+<div class="alert alert-info"><strong>FormulÃ¡rio para pagamento</strong></div>
 <div id="form-checkout__cardNumber" class="tamField"></div>
 <div id="form-checkout__expirationDate" class="tamField"></div>
 <div id="form-checkout__securityCode" class="tamField"></div>
@@ -28,9 +29,8 @@
 <input type="email" id="form-checkout__cardholderEmail" />
 
 <button class="btn btn-primary btn-lg btn-block" style="width:100%;" type="submit" id="form-checkout__submit">Pagar</button><br><br>
-<progress value="0" class="progress-bar">Carregando...</progress>
+<progress value="0" style="display:none;" class="progress-bar">Carregando...</progress>
 </form>
-</div>
 
 <script>
 
@@ -43,7 +43,7 @@
         id: "form-checkout",
         cardNumber: {
           id: "form-checkout__cardNumber",
-          placeholder: "Número do cartão",
+          placeholder: "NÃºmero do cartÃ£o",
         },
         expirationDate: {
           id: "form-checkout__expirationDate",
@@ -51,11 +51,11 @@
         },
         securityCode: {
           id: "form-checkout__securityCode",
-          placeholder: "Código de segurança",
+          placeholder: "CÃ³digo de seguranÃ§a",
         },
         cardholderName: {
           id: "form-checkout__cardholderName",
-          placeholder: "Titular do cartão",
+          placeholder: "Titular do cartÃ£o",
         },
         issuer: {
           id: "form-checkout__issuer",
@@ -71,7 +71,7 @@
         },
         identificationNumber: {
           id: "form-checkout__identificationNumber",
-          placeholder: "Número do documento",
+          placeholder: "NÃºmero do documento",
         },
         cardholderEmail: {
           id: "form-checkout__cardholderEmail",
@@ -108,7 +108,7 @@
               payment_method_id,
               transaction_amount: Number(amount),
               installments: Number(installments),
-              description: "Descrição do produto",
+              description: "DescriÃ§Ã£o do produto",
               payer: {
                 email,
                 identification: {

@@ -33,40 +33,9 @@
 
 
 </div>
-<div style="display: none;" id="facebox">
-	<div class="popup">
-		<table>
-			<tbody>
-				<tr>
-					<td class="tl"></td>
-					<td class="b"></td>
-					<td class="tr"></td>
-				</tr>
-				<tr>
-					<td class="b"></td>
-					<td class="body">
-						<div class="content"></div>
-						<div class="footer">
-							<a class="close" href="#"> <img class="close_image" title="close"
-								src="images/closelabel.gif">
-							</a>
-						</div>
-					</td>
-					<td class="b"></td>
-				</tr>
-				<tr>
-					<td class="bl"></td>
-					<td class="b"></td>
-					<td class="br"></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
 <div>
 
-	<div style="width: 100%;" id="manipulacao"
-		class="ui-dialog-content ui-widget-content"></div>
+<div style="width: 100%;" id="manipulacao" class="ui-dialog-content ui-widget-content"></div>
 
 </div>
 </body>

@@ -16,7 +16,7 @@ include ('products.php');
           <div class="card-body">
             <h6 class="card-title" id="nome<?= $value['id'] ?>"><?= $value['nome'] ?></h6>
             <h7 class="card-title" id="descricao<?= $value['id'] ?>"><?= $value['descricao'] ?></h7>
-            <p class="card-text" id="price<?= $value['id'] ?>"><?= $value['price'] ?></p>
+            <p class="card-text" id="price<?= $value['id'] ?>">R$ <?= number_format($value['price'], 2, ',', '') ?></p>
           <ul class="list-group list-group-flush">
             <li class="list-group-item" id="id<?= $value['id'] ?>"><?= $value['id'] ?></li>
           </ul>

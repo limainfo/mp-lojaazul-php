@@ -51,14 +51,22 @@ if ( isset($_POST['controller']) &&($_POST['controller']=='products') && ($_POST
 }
 
 if ( isset($_POST['controller']) &&($_POST['controller']=='products') && ($_POST['acao']=='updateQty') ){
-
+		$countQty = 0;
 		foreach ($_SESSION['comprados'] as $ind=>$valor){
 			if($valor['reference']==$_POST['referencia']){
 				$_SESSION['comprados'][$ind]['qty']=$_POST['qty'];
+				$countQty += $_POST['qty'];
+			}else{
+				$countQty += $_SESSION['comprados'][$ind]['qty'];
 			}
 		}
 
 	include("view_products_addchart.php");
+	if($countQty){
+		echo "<script>\$(\"#productmsg\").text('".$countQty."');\$(\"#productmsg\").show();</script>";
+	}else{
+		echo "<script>\$(\"#productmsg\").text('0');\$(\"#productmsg\").hide();</script>";
+	}
 }
 
 

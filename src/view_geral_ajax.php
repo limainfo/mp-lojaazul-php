@@ -6,6 +6,11 @@
 <!--<script type="text/javascript" src="js/ui/js/jquery-ui-1.13.2/jquery-ui.min.js"></script>-->
 
 <script type="text/javascript">
+$("#productmsg").hide();
+$("#pagmsg").hide();
+$("#notifymsg").hide();
+
+
 const mp = new MercadoPago('TEST-d6663f9a-bf2d-4d68-95fb-6e491bfdf8bd', {
     locale: 'pt-BR'
   });
@@ -17,6 +22,11 @@ $.fx.speeds._default = 1000;
 	});	
 
 function addchart(id) {
+	var qt = $("#productmsg").text();
+	var sum = eval(qt)+1;
+	$("#productmsg").text(sum.toString());
+	$("#productmsg").show();
+
 	$( "#manipulacao" ).dialog({
 		autoOpen: false,
 		title:'Insert product on chart',

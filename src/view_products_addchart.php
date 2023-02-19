@@ -60,12 +60,16 @@ function envia() {
 	 processData: true,
     url: 'controller_<?php echo $controllernome; ?>.php',
     beforeSend: function(){
-      $("#spinner").css({'display':'block'});
+	  $("#spinner").css({'display':'block'});
 	},
     success: function(data) {
 	  $('#manipulacao').html(data);
       $("#spinner").css({'display':'none'});
-    },
+		$( "#manipulacao" ).dialog({
+			position: { my: "center", at: "top", of: window }
+		});
+	  $( "#manipulacao" ).dialog( "open" );
+	},
     error: function() {},
     data: dados,
     datatype: 'html',
