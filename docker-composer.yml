@@ -1,0 +1,14 @@
+services:
+  web:
+    image: newdeveloper/apache-php-composer
+    ports:
+      - "80:80"
+    volumes:
+      - ./mp-lojaazul-php:/var/www/html/public
+
+    networks:
+      - minha-rede
+
+networks:
+   minha-rede:
+     driver: bridge

@@ -1,6 +1,6 @@
 <?php 
 //namespace Limainfo\MpLojaazulPhp;
-require __DIR__ .  '/../vendor/autoload.php';
+require __DIR__ .  '/vendor/autoload.php';
 
 session_start();
 //MercadoPago\SDK::setAccessToken('PROD_ACCESS_TOKEN');
